@@ -5,5 +5,110 @@ html{
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: #e3edf1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #e3edf1; */
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
 }
+
+.calculator {
+    background: white;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 5px 50px 5px rgb(121, 7, 7);
+}
+
+.calculator-display {
+    background: black;
+    color: white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 10px 10px 0 0;
+}
+
+.calculator-display h1 {
+    margin: 0;
+    padding: 25px;
+    letter-spacing: 3px;
+    font-size: 45px;
+    font-family: "Lucida Console", sans-serif;
+    font-weight: 100;
+    overflow-x: auto;
+}
+
+/* Custom scroll */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  /* buttons */
+  .calculator-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      padding: 10px;
+  }
+
+  .equal-sign {
+      grid-column: -2;
+      grid-row: 2 / span 4;
+      background-color: orange;
+      font-size: 30px;
+  }
+  .equal-sign:active {
+      color: orange;
+      background: white;
+  }
+
+  .clear {
+      background-color: rgb(241, 88, 88);
+  }
+  .clear:hover{
+    filter: brightness(90%);
+  }
+
+  button {
+      min-height: 50px;
+      font-size: 20px;
+      font-weight: 100;
+      border: 1px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: rgb(rgb(209, 209, 209), green, blue);
+  }
+  button:hover {
+    filter: brightness(110%);
+}
+    button:active {
+    transform: translateY(1px);
+}
+    button:focus {
+    outline: none;
+}
+
+  .operator:not(.equal-sign) {
+      font-size: 30px;
+      background-color: lightgreen;
+  }
+
+  @media screen and (max-width: 600px){
+      .calculator {
+          width: 95%;
+      }
+  }
